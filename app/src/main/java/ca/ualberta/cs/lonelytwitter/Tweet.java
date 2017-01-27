@@ -51,4 +51,8 @@ public abstract class Tweet {
         return false;
     }
 
+    @Override
+    public String toString(){
+        return date.toString() + " | " + message;
+    }
 }
