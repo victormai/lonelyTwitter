@@ -7,6 +7,9 @@ import java.util.Date;
  * Created by vmai on 1/19/17.
  */
 
+/**
+ * @see Mood
+ */
 public class Happy extends Mood {
 
     public Happy(String mood) {

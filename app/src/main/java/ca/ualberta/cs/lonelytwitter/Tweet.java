@@ -8,6 +8,9 @@ import java.util.Date;
  * Created by vmai on 1/19/17.
  */
 
+/**
+ * Tweet class that stores data
+ */
 public abstract class Tweet {
     private Date date;
     private String message;
