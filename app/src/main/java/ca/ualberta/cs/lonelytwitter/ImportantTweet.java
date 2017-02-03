@@ -7,6 +7,9 @@ import java.util.Date;
  * Created by vmai on 1/19/17.
  */
 
+/**
+ * Calls Tweet superclass for construction
+ */
 public class ImportantTweet extends Tweet {
     public ImportantTweet(String message) {
         super(message);

@@ -9,7 +9,8 @@ import java.util.Date;
  */
 
 /**
- * Tweet class that stores data
+ * Tweet class that stores date, string message and stores a list of moods
+ * Has constructors
  */
 public abstract class Tweet {
     private Date date;

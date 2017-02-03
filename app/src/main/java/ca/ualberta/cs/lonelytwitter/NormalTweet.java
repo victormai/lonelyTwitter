@@ -6,6 +6,9 @@ import java.util.Date;
  * Created by vmai on 1/19/17.
  */
 
+/**
+ * Calls Tweet superclass for construction
+ */
 public class NormalTweet extends Tweet {
     public NormalTweet(String message) {
         super(message);
