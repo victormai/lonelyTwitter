@@ -13,8 +13,10 @@ import java.util.Date;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -61,6 +63,9 @@ public class LonelyTwitterActivity extends Activity {
 	 *  @see #loadFromFile()
 	 *  @see #saveInFile()
 	 */
+
+	private  LonelyTwitterActivity activity = this;
+
 	private static final String FILENAME = "file.sav";
 	private  enum TweetListOrdering {DATE_ASCENDING, DATE_DESCENDING, TEXT_ASCENDING,
 		TEXT_DECENDING};
@@ -69,6 +74,10 @@ public class LonelyTwitterActivity extends Activity {
 
 	private ArrayList<Tweet> tweetList;
 	private ArrayAdapter<Tweet> adapter;
+
+	public ListView getOldTweetsList(){
+		return oldTweetsList;
+	}
 
 	/**
 	 * Called when the activity is first created
@@ -112,6 +121,17 @@ public class LonelyTwitterActivity extends Activity {
 
 			}
 		});
+
+		oldTweetsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+			public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+				Intent intent = new Intent(activity, EditTweetActivity.class);
+
+				Gson gson = new Gson();
+				intent.putExtra("tweet", gson.toJson(tweetList.get(i)));
+				startActivity(intent);
+			}
+		});
+
 	}
 
 	/**
